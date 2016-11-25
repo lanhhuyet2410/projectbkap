@@ -58,7 +58,24 @@ class News extends \yii\db\ActiveRecord
     public function getNews(){
         $data = News::find()->where('status =1')->limit(3)->all();
         return $data;
-        echo $data;
     }
 
+    public function getAllNews(){
+        $data = News::find()->where('status =1')->all();
+        return $data;
+    }
+
+    public function getNewsDetail($id){
+        $data = News::find()->where(['news_id'=>$id])->one();
+        return $data;
+    }
+
+    public function getRecentNews($limit=4){
+        $data = News::find()->limit($limit)->orderBy('news_id DESC')->asArray()->all();
+        return $data;
+    }
+    
 }
+
+
+

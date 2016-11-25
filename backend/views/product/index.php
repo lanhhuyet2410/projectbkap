@@ -102,7 +102,7 @@ $this->params['breadcrumbs'][] = $this->title;
             [
                 'attribute'=>'color_id',
                 'headerOptions'=>[
-                    'style'=>'width:100px;text-align:center',
+                    'style'=>'width:90px;text-align:center',
                 ],
                 'content'=>function($model){
                     $color = ($model->color_id) ? unserialize($model->color_id) : [];
@@ -118,7 +118,7 @@ $this->params['breadcrumbs'][] = $this->title;
                     return rtrim($color1,',');
                 },
                 'contentOptions'=>[
-                    'style'=>'width:100px;text-align:center;vertical-align: middle',
+                    'style'=>'width:90px;text-align:center;vertical-align: middle',
                 ],
                 // ,'value'=>'color.color_name'
             ],
@@ -126,15 +126,18 @@ $this->params['breadcrumbs'][] = $this->title;
             // 'content:ntext',
             [
                 'attribute'=>'status',
+                'headerOptions'=>[
+                    'style'=>'width:100px;text-align:center',
+                ],
                 'content'=>function($model){
                     if ($model->status==1) {
-                        return "Hoạt động";
+                        return Html::a('Đã kích hoạt','javascrip:void(0)',['class'=>'label label-success']);
                     }else{
-                        return "Không hoạt động";
+                        return Html::a('Không kích hoạt','javascrip:void(0)',['class'=>'label label-danger']);
                     }
                 },
                 'contentOptions'=>[
-                    'style'=>'width:90px;text-align:center;vertical-align: middle',
+                    'style'=>'width:100px;text-align:center;vertical-align: middle',
                 ],
             ],
             // [
@@ -157,17 +160,18 @@ $this->params['breadcrumbs'][] = $this->title;
                 'delete'=>function($url,$model){
                     return Html::a('Xóa',$url,
                         [
-                        'class'=>'label label-danger',
-                        'data-confirm'=>'Bạn có muốn xóa mục này không?',
-                            [
-                            'data-method'=>'post',
-                            ],
+                            'class'=>'label label-danger',
+                            'data'=>[
+                                'confirm'=>'Bạn có muốn xóa mục này không?',
+                                'method'=>'post',
+                            ]
+                        
                         ]
                         );
                     },
                 ],
                 'contentOptions'=>[
-                    'style'=>'width:130px;text-align:center;vertical-align: middle',
+                    'style'=>'width:150px;text-align:center;vertical-align: middle',
                 ],
             ],
         ],

@@ -44,13 +44,16 @@ $this->params['breadcrumbs'][] = $this->title;
             ],
             // 'content:ntext',
             [
-                'attribute' => 'image_link',
+                'attribute'=>'status',
                 'headerOptions'=>[
                     'style'=>'width:100px;text-align:center',
                 ],
-                'format'=>'html',
-                'content'=>function($data){
-                    return html::img($data->image_link,['alt'=>'yii','width'=>'100']);
+                'content'=>function($model){
+                    if ($model->status==1) {
+                        return Html::a('Đã kích hoạt','javascrip:void(0)',['class'=>'label label-success']);
+                    }else{
+                        return Html::a('Không kích hoạt','javascrip:void(0)',['class'=>'label label-danger']);
+                    }
                 },
                 'contentOptions'=>[
                     'style'=>'width:100px;text-align:center;vertical-align: middle',
@@ -104,11 +107,12 @@ $this->params['breadcrumbs'][] = $this->title;
                 'delete'=>function($url,$model){
                     return Html::a('Xóa',$url,
                         [
-                        'class'=>'label label-danger',
-                        'data-confirm'=>'Bạn có muốn xóa mục này không?',
-                            [
-                            'data-method'=>'post',
-                            ],
+                            'class'=>'label label-danger',
+                            'data'=>[
+                                'confirm'=>'Bạn có muốn xóa mục này không?',
+                                'method'=>'post',
+                            ]
+                        
                         ]
                         );
                     },

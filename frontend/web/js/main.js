@@ -17,7 +17,8 @@ $('.quick-view').click(function(event) {
 				if(val.color.length){
 					var colorhtml = '';
 					for(var i = 0; i < val.color.length; i++){
-						colorhtml += '<a>'+val.color[i]+'</a>';
+
+						colorhtml += '<input type="radio" name="color" id="'+val.color[i]+'">'+val.color[i]+'<br/>';
 					}
 				}
 				$('div.quick-view-color').html(colorhtml);
@@ -25,12 +26,13 @@ $('.quick-view').click(function(event) {
 				if (val.size.length) {
 					var sizehtml = '';
 					for (var i = 0; i < val.size.length; i++) {
-						sizehtml += '<a>'+val.size[i]+'</a>';
+						sizehtml += '<input type="radio" name="size" id="'+val.size[i]+'">'+val.size[i]+'<br/>';
 					}
 				}
 				$('div.quick-view-size').html(sizehtml);
 				$('a.aa-add-to-cart-btn').attr('href','/projectbkap/product/detail?id='+val.product_id);
-				$('a.aa-add-to-cart-btn#hehe').attr('href','javascript:void(0)');
+				$('#hehe').attr('href','javascript:void(0)');
+				$('#hehe').attr('data-id',val.product_id);
 			});
 			// console.log(items);	
 		}

@@ -29,7 +29,7 @@ $this->title = 'Product';
                 <figure>
                   <a class="aa-product-img" href="<?= Yii::$app->homeUrl.'product/detail?id='.$value['product_id'] ?>">
                   <img src="<?= $value['product_image'] ?>" alt="<?= $value['product_name'] ?>"></a>
-                  <a class="aa-add-card-btn" href="javascript:void(0)" onclick="addCart(<?= $value['product_id'] ?>)"><span class="fa fa-shopping-cart"></span>Add To Cart</a>
+                  <a href="javascript:void(0)" class="aa-add-card-btn btn-add-cart" data-id="<?= $value['product_id'] ?>"><span class="fa fa-shopping-cart"></span>Add To Cart</a>
                   <figcaption>
                     <h4 class="aa-product-title"><a href="<?= Yii::$app->homeUrl.'product/detail?id='.$value['product_id'] ?>"><?= $value['product_name'] ?></a></h4>
                     <span class="aa-product-price">$<?= $value['price'] ?></span>

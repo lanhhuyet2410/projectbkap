@@ -6,7 +6,7 @@ use yii\widgets\DetailView;
 /* @var $this yii\web\View */
 /* @var $model backend\models\Size */
 
-$this->title = $model->size_id;
+$this->title = $model->size_name;
 $this->params['breadcrumbs'][] = ['label' => 'Sizes', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>

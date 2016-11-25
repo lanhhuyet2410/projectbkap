@@ -5,9 +5,9 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model backend\models\Banner */
 
-$this->title = 'Cập nhật Banner: ' . $model->banner_id;
+$this->title = 'Cập nhật Banner: ' . $model->tile_1;
 $this->params['breadcrumbs'][] = ['label' => 'Banners', 'url' => ['index']];
-$this->params['breadcrumbs'][] = ['label' => $model->banner_id, 'url' => ['view', 'id' => $model->banner_id]];
+$this->params['breadcrumbs'][] = ['label' => $model->tile_1, 'url' => ['view', 'id' => $model->banner_id]];
 $this->params['breadcrumbs'][] = 'Update';
 ?>
 <div class="banner-update">

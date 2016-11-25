@@ -39,7 +39,7 @@ class Customer extends \yii\db\ActiveRecord
         return [
             [['username','email'], 'required','message'=>'{attribute} không được để trống'],
             [['status', 'created_at', 'updated_at'], 'integer'],
-            [['username', 'full_name', 'password_hash', 'password_reset_token', 'email', 'phone', 'address'], 'string', 'max' => 255],
+            [['username', 'full_name', 'password_hash', 'password_reset_token', 'email', 'phone', 'address','password'], 'string', 'max' => 255],
             [['auth_key'], 'string', 'max' => 32],
             [['username'], 'unique'],
             [['email'], 'unique'],

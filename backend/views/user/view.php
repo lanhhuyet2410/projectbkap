@@ -6,7 +6,7 @@ use yii\widgets\DetailView;
 /* @var $this yii\web\View */
 /* @var $model backend\models\User */
 
-$this->title = $model->id;
+$this->title = 'Thông tin quản trị viên '.$model->username;
 $this->params['breadcrumbs'][] = ['label' => 'Users', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
@@ -34,7 +34,16 @@ $this->params['breadcrumbs'][] = $this->title;
             'email:email',
             'mobile',
             'address',
-            'status',
+            [
+                'attribute'=>'status',
+                'content'=>function($model){
+                    if ($model->status==10) {
+                        return "Hoạt động";
+                    }else{
+                        return "Không hoạt động";
+                    }
+                },
+            ],
             [
                 'attribute'=>'created_at',
                 'format'=>['datetime','php:H:i:s d-m-Y']

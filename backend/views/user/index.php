@@ -65,17 +65,17 @@ $this->params['breadcrumbs'][] = $this->title;
             [
                 'attribute'=>'status',
                 'headerOptions'=>[
-                    'style'=>'width:120px;text-align:center',
+                    'style'=>'width:100px;text-align:center',
                 ],
                 'content'=>function($model){
                     if ($model->status==10) {
-                        return "Hoạt động";
+                        return Html::a('Đã kích hoạt','javascrip:void(0)',['class'=>'label label-success']);
                     }else{
-                        return "Không hoạt động";
+                        return Html::a('Không kích hoạt','javascrip:void(0)',['class'=>'label label-danger']);
                     }
                 },
                 'contentOptions'=>[
-                    'style'=>'width:120px;text-align:center;vertical-align: middle',
+                    'style'=>'width:100px;text-align:center;vertical-align: middle',
                 ],
             ],
             [
@@ -99,7 +99,31 @@ $this->params['breadcrumbs'][] = $this->title;
                 ],
             ],
 
-            ['class' => 'yii\grid\ActionColumn'],
+            ['class' => 'yii\grid\ActionColumn',
+                'buttons'=>[
+                'view'=>function($url,$model){
+                    return Html::a('Xem',$url,['class'=>'label label-primary']);
+                    },
+                'update'=>function($url,$model){
+                    return Html::a('Sửa',$url,['class'=>'label label-success']);
+                },
+                'delete'=>function($url,$model){
+                    return Html::a('Xóa',$url,
+                        [
+                            'class'=>'label label-danger',
+                            'data'=>[
+                                'confirm'=>'Bạn có muốn xóa mục này không?',
+                                'method'=>'post',
+                            ]
+                        
+                        ]
+                        );
+                    },
+                ],
+                'contentOptions'=>[
+                    'style'=>'width:130px;text-align:center;vertical-align: middle',
+                ],
+            ],
         ],
     ]); ?>
 </div>

@@ -1,5 +1,6 @@
 <?php 
   use yii\helpers\Html;
+  use frontend\components\cart;
  ?>
 
 <header id="aa-header">
@@ -49,12 +50,13 @@
             <!-- / header top left -->
             <div class="aa-header-top-right">
               <ul class="aa-head-top-nav-right">
-                <li class="hidden-xs"><a href="cart.html">Giỏ hàng</a></li>
-                <li class="hidden-xs"><a href="checkout.html">Thanh toán</a></li>
+                <li class="hidden-xs"><a href="<?= Yii::$app->homeUrl.'cart' ?>">Giỏ hàng</a></li>
+                <li class="hidden-xs"><a href="<?= Yii::$app->homeUrl.'checkout/index' ?>">Thanh toán</a></li>
+                <li><a href="<?= Yii::$app->homeUrl.'wishlist/index' ?>">Yêu thích</a></li>
                   <?php 
                   if (!Yii::$app->user->isGuest) : ?>
-                    <li><?php echo Html::a('Yêu thích',['/'],['data-method'=>'post']); ?></li>
-                    <li><a href=""><?php echo Yii::$app->user->identity->username; ?></a></li>
+                    
+                    <li><a href="<?= Yii::$app->homeUrl.'customer/view' ?>"><?php echo Yii::$app->user->identity->username; ?></a></li>
                     <li>
                       <?php echo Html::a('Thoát',['site/logout'],['data-method'=>'post']); ?>
                     </li>
@@ -89,40 +91,46 @@
             </div>
             <!-- / logo  -->
              <!-- cart box -->
-            <div class="aa-cartbox">
+             <?php 
+              $totalAmount = $total = 0;
+                if(count($cartstore)) {
+                 foreach ($cartstore as $item) {
+                  $total +=$cost*$item->qtt;
+                }
+              }
+            ?>
+            <div class="aa-cartbox" id="aa-cartbox-summary">
               <a class="aa-cart-link" href="#">
                 <span class="fa fa-shopping-basket"></span>
                 <span class="aa-cart-title">SHOPPING CART</span>
-                <span class="aa-cart-notify">2</span>
+                <span class="aa-cart-notify"><?php echo $totalItem ?></span>
               </a>
               <div class="aa-cartbox-summary">
                 <ul>
+                  <?php 
+                     if(count($cartstore)) { foreach ($cartstore as $item) {
+                  ?>
+
                   <li>
-                    <a class="aa-cartbox-img" href="#"><img src="img/woman-small-2.jpg" alt="img"></a>
+                    <a class="aa-cartbox-img" href="<?= Yii::$app->homeUrl.'product/detail?id='.$item->product_id ?>"><img src="<?= $item->product_image ?>" alt="<?= $item->product_name ?>"></a>
                     <div class="aa-cartbox-info">
-                      <h4><a href="#">Product Name</a></h4>
-                      <p>1 x $250</p>
+                      <h4><a href="<?= Yii::$app->homeUrl.'product/detail?id='.$item->product_id ?>"><?= $item->product_name ?></a></h4>
+                      <p><?= $item->qtt ?> x $<?= $cost ?></p>
                     </div>
-                    <a class="aa-remove-product" href="#"><span class="fa fa-times"></span></a>
+                    <a class="aa-remove-product" href="javascript:void(0)"><span class="fa fa-times"></span></a>
                   </li>
-                  <li>
-                    <a class="aa-cartbox-img" href="#"><img src="img/woman-small-1.jpg" alt="img"></a>
-                    <div class="aa-cartbox-info">
-                      <h4><a href="#">Product Name</a></h4>
-                      <p>1 x $250</p>
-                    </div>
-                    <a class="aa-remove-product" href="#"><span class="fa fa-times"></span></a>
-                  </li>                    
+                  <?php } }?>
+
                   <li>
                     <span class="aa-cartbox-total-title">
                       Total
                     </span>
                     <span class="aa-cartbox-total-price">
-                      $500
+                      $<?php echo number_format($total,0,"","."); ?>
                     </span>
                   </li>
                 </ul>
-                <a class="aa-cartbox-checkout aa-primary-btn" href="checkout.html">Checkout</a>
+                <a class="aa-cartbox-checkout aa-primary-btn" href="<?= Yii::$app->homeUrl.'checkout/index' ?>">Checkout</a>
               </div>
             </div>
             <!-- / cart box -->

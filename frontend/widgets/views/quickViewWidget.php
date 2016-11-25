@@ -31,6 +31,7 @@
               <div class="quick-view-color aa-prod-view-size">
                 
               </div>
+              <h4>Color</h4>
               <div class="quick-view-size aa-prod-view-size">
                
               </div>
@@ -42,7 +43,7 @@
                 </p>
               </div>
               <div class="aa-prod-view-bottom">
-                <a href="javascript:void(0)" class="aa-add-to-cart-btn" id="hehe"><span class="fa fa-shopping-cart"></span>Add To Cart</a>
+                <a href="javascript:void(0)" class="aa-add-card-btn btn-add-cart" id="hehe"><span class="fa fa-shopping-cart"></span>Add To Cart</a>
                 <a href="" class="aa-add-to-cart-btn">View Details</a>
               </div>
             </div>

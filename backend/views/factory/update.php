@@ -5,9 +5,9 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model backend\models\Factory */
 
-$this->title = 'Cập nhật nhãn hiệu: ' . $model->factory_id;
+$this->title = 'Cập nhật nhãn hiệu: ' . $model->factory_name;
 $this->params['breadcrumbs'][] = ['label' => 'Factories', 'url' => ['index']];
-$this->params['breadcrumbs'][] = ['label' => $model->factory_id, 'url' => ['view', 'id' => $model->factory_id]];
+$this->params['breadcrumbs'][] = ['label' => $model->factory_name, 'url' => ['view', 'id' => $model->factory_id]];
 $this->params['breadcrumbs'][] = 'Update';
 ?>
 <div class="factory-update">

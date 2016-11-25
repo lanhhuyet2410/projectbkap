@@ -34,11 +34,22 @@
 #RESPONSIVE DESIGN
 
 */
+@font-face {
+    font-family: 'VNF-Valentina';
+    src: url("../fonts/VNF-Valentina.ttf");
+}
+@font-face {
+    font-family: 'vnf-optima-regular';
+    src: url("../fonts/vnf-optima-regular.ttf");
+}
 
 /* BASE - Base tyles, Variables, Mixins, etc. */
 body {
   background-color: #ffffff;
-  font-family: "Lato", sans-serif;
+  font-family: "Lato",sans-serif;
+  /*,'VNF-Valentina';*/
+  /* */
+
   color: #333333;
   font-size: 16px;
   overflow-x: hidden;
@@ -67,7 +78,7 @@ a:focus {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: "Raleway", sans-serif;
+  font-family: "vnf-optima-regular", sans-serif;
 }
 
 h2 {

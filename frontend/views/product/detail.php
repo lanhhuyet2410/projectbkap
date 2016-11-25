@@ -2,11 +2,17 @@
 use frontend\widgets\catBannerWidget;
 use frontend\widgets\quickViewWidget;
 use frontend\widgets\relatedProductWidget;
-
 /* @var $this yii\web\View */
 $this->title = 'Product Detail';
 ?>
-
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v2.8";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 <?= catBannerWidget::widget(); ?>
 
   <section id="aa-product-details">
@@ -43,7 +49,7 @@ $this->title = 'Product Detail';
                     ?>
                       <div class="aa-prod-view-size">
                         <?php foreach ($sizes  as $size) :  ?>
-                          <input type="radio" name="size" id="<?= $data->getSize($size)->size_id ?>">
+                          <input type="radio" name="size" value="<?= $data->getSize($size)->size_id ;?>" id="<?= $data->getSize($size)->size_id ?>">
                           <label for="<?= $data->getSize($size)->size_id ?>"><?php echo $data->getSize($size)->size_name; ?></label>
                         <?php endforeach; ?>
                       </div>
@@ -56,8 +62,8 @@ $this->title = 'Product Detail';
                     ?>
                       <div class="aa-color-tag">
                         <?php foreach ($colors  as $color) :  ?>
-                          <input type="radio" name="color" id="<?= $data->getColor($color)->color_name ;?>" />
-                          <label for="<?= $data->getColor($color)->color_name ;?>"><?php echo $data->getColor($color)->color_name; ?>
+                          <input type="radio" name="color" value="<?= $data->getColor($color)->color_id ;?>" id="<?= $data->getColor($color)->color_id ;?>" />
+                          <label for="<?= $data->getColor($color)->color_id ;?>"><?php echo $data->getColor($color)->color_name; ?>
                           </label><br/>
                         <?php endforeach; ?>                     
                       </div>
@@ -73,9 +79,9 @@ $this->title = 'Product Detail';
                       </p>
                     </div>
                     <div class="aa-prod-view-bottom">
-                      <a class="aa-add-to-cart-btn" href="javascript:void(0)" onclick="addCart(<?= $data->product_id ?>)">Mua hàng</a>
-                      <a class="aa-add-to-cart-btn" href="javascript:void(0)" onclick="addWishlist(<?= $data->product_id ?>)">Yêu thích</a>
-                      <a class="aa-add-to-cart-btn" href="#">So sánh</a>
+                      <a href="javascript:void(0)" class="btn-add-cart aa-add-to-cart-btn" data-id="<?= $data->product_id;?>">Mua hàng</a>
+                      <a class="aa-add-to-cart-btn likeproduct" href="javascript:void(0)" data-id="<?= $data->product_id; ?>">Yêu thích</a>
+                      <a class="aa-add-to-cart-btn" href="<?= Yii::$app->homeUrl ?>product/listproductparent?id=<?= $dataCat->cat_id ?>">Xem thêm sản phẩm</a>
                     </div>
                   </div>
                 </div>
@@ -89,15 +95,13 @@ $this->title = 'Product Detail';
 
               <!-- Tab panes -->
               <div class="tab-content">
-                <div class="tab-pane fade in active" id="description">
+                <div class="tab-pane fade in active" id="description" >
                   <p><?= $data->content ?></p>
                 </div>
 
                 <div class="tab-pane fade " id="review">
-                  <div class="aa-product-review-area">
-                    
-                   <div class="fb-comments" data-href="https://developers.facebook.com/docs/plugins/comments#configurator" data-width="100%" data-numposts="5"></div>
-
+                  <div class="aa-product-review-area text-center">
+                    <div class="fb-comments" data-href="https://developers.facebook.com/docs/plugins/comments#configurator" data-width="900" data-numposts="5"></div>
                   </div>
                 </div>   
               </div>

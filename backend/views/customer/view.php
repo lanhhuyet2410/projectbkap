@@ -6,7 +6,7 @@ use yii\widgets\DetailView;
 /* @var $this yii\web\View */
 /* @var $model backend\models\Customer */
 
-$this->title = $model->id;
+$this->title = 'Thông tin thành viên '.$model->username;
 $this->params['breadcrumbs'][] = ['label' => 'Customers', 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 ?>
@@ -35,8 +35,14 @@ $this->params['breadcrumbs'][] = $this->title;
             'phone',
             'address',
             'status',
-            'created_at',
-            'updated_at',
+            [
+                'attribute'=>'created_at',
+                'format'=>['datetime','php:H:i:s d-m-Y']
+            ],
+            [
+                'attribute'=>'updated_at',
+                'format'=>['datetime','php:H:i:s d-m-Y']
+            ],
         ],
     ]) ?>
 

@@ -8,26 +8,26 @@
           <div class="row">
             <div class="col-md-3 col-sm-6">
               <div class="aa-footer-widget">
-                <h3>Main Menu</h3>
+                <h3>Danh mục chính</h3>
                 <ul class="aa-footer-nav">
-                  <li><a href="#">Home</a></li>
-                  <li><a href="#">Our Services</a></li>
-                  <li><a href="#">Our Products</a></li>
-                  <li><a href="#">About Us</a></li>
-                  <li><a href="#">Contact Us</a></li>
+                  <li><a href="#">Trang chủ</a></li>
+                  <li><a href="#">Dịch vụ của chúng tôi</a></li>
+                  <li><a href="#">Sản phẩm của chúng tôi</a></li>
+                  <li><a href="#">Giới thiệu</a></li>
+                  <li><a href="#">Liên hệ</a></li>
                 </ul>
               </div>
             </div>
             <div class="col-md-3 col-sm-6">
               <div class="aa-footer-widget">
                 <div class="aa-footer-widget">
-                  <h3>Knowledge Base</h3>
+                  <h3>Hỗ trợ</h3>
                   <ul class="aa-footer-nav">
-                    <li><a href="#">Delivery</a></li>
-                    <li><a href="#">Returns</a></li>
-                    <li><a href="#">Services</a></li>
-                    <li><a href="#">Discount</a></li>
-                    <li><a href="#">Special Offer</a></li>
+                    <li><a href="#">Vận chuyển</a></li>
+                    <li><a href="#">Quy định đổi hàng</a></li>
+                    <li><a href="#">Dịch vụ</a></li>
+                    <li><a href="#">Giảm giá</a></li>
+                    <li><a href="#">Hình thức thanh toán</a></li>
                   </ul>
                 </div>
               </div>
@@ -35,13 +35,13 @@
             <div class="col-md-3 col-sm-6">
               <div class="aa-footer-widget">
                 <div class="aa-footer-widget">
-                  <h3>Useful Links</h3>
+                  <h3>Thông tin</h3>
                   <ul class="aa-footer-nav">
-                    <li><a href="#">Site Map</a></li>
-                    <li><a href="#">Search</a></li>
-                    <li><a href="#">Advanced Search</a></li>
-                    <li><a href="#">Suppliers</a></li>
-                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Bản đồ</a></li>
+                    <li><a href="#">Hệ thống cửa hàng</a></li>
+                    <li><a href="#">Tuyển dụng</a></li>
+                    <li><a href="#">Đối tác</a></li>
+                    <li><a href="#">Hỏi đáp</a></li>
                   </ul>
                 </div>
               </div>
@@ -49,7 +49,7 @@
             <div class="col-md-3 col-sm-6">
               <div class="aa-footer-widget">
                 <div class="aa-footer-widget">
-                  <h3>Contact Us</h3>
+                  <h3>Liên hệ</h3>
                   <address>
                     <p> 238 Hoàng Quốc Việt, Cầu Giấy, HN</p>
                     <p><span class="fa fa-phone"></span>0988565399</p>

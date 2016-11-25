@@ -5,7 +5,7 @@ use yii\base\Widget;
 use yii\helpers\Html;
 
 
-class loginModalWidget extends Widget
+class cartModalWidget extends Widget
 {
     public $message;
 
@@ -17,7 +17,7 @@ class loginModalWidget extends Widget
 
     public function run()
     {
-        return $this->render('loginModalWidget');
+        return $this->render('cartModalWidget');
     }
 }
 

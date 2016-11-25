@@ -31,8 +31,9 @@
               </ul>
             </li>
             <?php } ?>
-            <li><a href="contact.html">Tin tức</a></li>
-            <li><a href="contact.html">Liên hệ</a></li>
+            <li><a href="<?= Yii::$app->homeUrl.'news/index'?>">Tin tức</a></li>
+            <li><a href="<?= Yii::$app->homeUrl.'site/contact'?>">Liên hệ</a></li>
+            <li><a href="<?= Yii::$app->homeUrl.'site/about'?>">Giới thiệu</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>

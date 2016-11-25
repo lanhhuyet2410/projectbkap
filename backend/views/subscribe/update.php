@@ -5,9 +5,9 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model backend\models\Subscribe */
 
-$this->title = 'Cập nhật đăng kí: ' . $model->subscribe_id;
+$this->title = 'Cập nhật đăng kí: ' . $model->email;
 $this->params['breadcrumbs'][] = ['label' => 'Subscribes', 'url' => ['index']];
-$this->params['breadcrumbs'][] = ['label' => $model->subscribe_id, 'url' => ['view', 'id' => $model->subscribe_id]];
+$this->params['breadcrumbs'][] = ['label' => $model->email, 'url' => ['view', 'id' => $model->subscribe_id]];
 $this->params['breadcrumbs'][] = 'Update';
 ?>
 <div class="subscribe-update">

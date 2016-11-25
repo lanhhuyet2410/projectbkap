@@ -80,9 +80,9 @@ $this->params['breadcrumbs'][] = $this->title;
                 ],
                 'content'=>function($model){
                     if ($model->status==1) {
-                        return "Hoạt động";
+                        return Html::a('Đã kích hoạt','javascrip:void(0)',['class'=>'label label-success']);
                     }else{
-                        return "Không hoạt động";
+                        return Html::a('Không kích hoạt','javascrip:void(0)',['class'=>'label label-danger']);
                     }
                 },
                 'contentOptions'=>[
@@ -121,11 +121,12 @@ $this->params['breadcrumbs'][] = $this->title;
                 'delete'=>function($url,$model){
                     return Html::a('Xóa',$url,
                         [
-                        'class'=>'label label-danger',
-                        'data-confirm'=>'Bạn có muốn xóa mục này không?',
-                            [
-                            'data-method'=>'post',
-                            ],
+                            'class'=>'label label-danger',
+                            'data'=>[
+                                'confirm'=>'Bạn có muốn xóa mục này không?',
+                                'method'=>'post',
+                            ]
+                        
                         ]
                         );
                     },

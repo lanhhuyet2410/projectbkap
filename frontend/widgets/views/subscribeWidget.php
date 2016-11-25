@@ -8,7 +8,7 @@
     <div class="row">
       <div class="col-md-12">
         <div class="aa-subscribe-area">
-          <h3>Subscribe our newsletter </h3>
+          <h3>Đăng ký nhận tin </h3>
           <p> Đăng ký email của bạn để nhận những cập nhật mới nhất từ chúng tôi!</p>
           <div class="aa-subscribe-form">
             <?php $form = ActiveForm::begin([

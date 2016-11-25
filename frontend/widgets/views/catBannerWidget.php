@@ -6,7 +6,7 @@
       <h2>Fashion</h2>
       <ol class="breadcrumb">
         <li><a href="<?= Yii::$app->homeUrl ?>">Home</a></li>         
-        <li class="active">Women</li>
+        <li class="active">Product</li>
       </ol>
     </div>
    </div>

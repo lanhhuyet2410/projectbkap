@@ -78,7 +78,7 @@ class Category extends \yii\db\ActiveRecord
             }
         }
 
-        $data = Product::find()->where(['cat_id'=>$catID])->limit(8)->asArray()->all();
+        $data = Product::find()->where(['cat_id'=>$catID])->limit(8)->orderBy('rand()')->asArray()->all();
         return $data;
     }
 }

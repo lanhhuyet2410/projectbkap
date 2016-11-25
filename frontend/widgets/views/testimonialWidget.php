@@ -7,6 +7,7 @@
             <!-- single slide -->
             <li>
               <div class="aa-testimonial-single">
+              <h4>Giới thiệu về chúng tôi</h4>
               <img class="aa-testimonial-img" src="img/testimonial-img-2.jpg" alt="testimonial img">
                 <span class="fa fa-quote-left aa-testimonial-quote"></span>
                 <p>Thành công nuôi dưỡng sự hoàn hảo. Sự hoàn hảo lại nuôi lớn thất bại. Chỉ có trí tưởng tượng mới tồn tại.</p>
@@ -33,6 +34,7 @@
              <!-- single slide -->
             <li>
               <div class="aa-testimonial-single">
+              <h4>Giới thiệu về chúng tôi</h4>
               <img class="aa-testimonial-img" src="img/testimonial-img-3.jpg" alt="testimonial img">
                 <span class="fa fa-quote-left aa-testimonial-quote"></span>
                 <p>Thiết kế không chỉ là những gì nó thể hiện bên ngoài và bạn cảm thấy thế nào. Thiết kế là cai cách mà nó vận động.</p>

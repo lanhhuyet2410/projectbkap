@@ -72,7 +72,7 @@ class CustomerController extends Controller
         $model->created_at = $time;
         $model->updated_at = $time;
 
-        $model->setPassword(Yii::$app->request->post('Customer')['password']);
+        $model->setPassword($model->password);
         $model->generateAuthKey();
         $model->generatePasswordResetToken();
         $model->status = 10;
@@ -102,9 +102,9 @@ class CustomerController extends Controller
             $time = time();
             $model->updated_at = $time;
             if($model->password != ''){
-                $model->setPassword(Yii::$app->request->post('Customer')['password']);
-                $model->generateAuthKey();
-                $model->generatePasswordResetToken();
+                $model->setPassword($model->password);
+                // $model->generateAuthKey();
+                // $model->generatePasswordResetToken();
             }
 
             $model->save();

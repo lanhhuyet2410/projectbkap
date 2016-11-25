@@ -935,8 +935,41 @@ h1.page-header {
 
 
 
+.new_nth:first-child .hot_new{
+	background:#fe8802;}
+	
+.new_nth:nth-child(2) .hot_new{
+	background:#FFD207;}
+	
+.new_nth:nth-child(3) .hot_new{
+	background:#a18d54;}	
 
+.new_nth:last-child .hot_new{
+	background:#7FBB35;}
+	
+.hot_new{
+	margin:15px 0;
+	padding:20px 25px;
+	border-radius:8px;
+	color:#fff;
+	text-align:right;}
+	
+.hot_new h5{
+	text-transform:uppercase;
+	font-family:Calibri;
+	font-size:16px;}
+	
+.hot_new h6{
+	font-size:30px;
+	margin-top:5px;
+}
 
-
+.badge{
+	float:right;
+	clear:both;
+	background:none;
+	padding:6px;
+	color:#333;
+}
 
 

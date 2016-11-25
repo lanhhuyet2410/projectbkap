@@ -14,7 +14,7 @@ use frontend\widgets\headerWidget;
 
 use frontend\widgets\subscribeWidget;
 use frontend\widgets\footerWidget;
-use frontend\widgets\loginModalWidget;
+use frontend\widgets\cartModalWidget;
 
 
 AppAsset::register($this);
@@ -31,13 +31,7 @@ AppAsset::register($this);
 </head>
 <body>
 <?php $this->beginBody() ?>
-
-       <div id="wpf-loader-two">          
-      <div class="wpf-loader-two-inner">
-        <span>Loading</span>
-      </div>
-    </div> 
-    <!-- / wpf loader Two -->       
+  
   <!-- SCROLL TOP BUTTON -->
     <a class="scrollToTop" href="#"><i class="fa fa-chevron-up"></i></a>
   <!-- END SCROLL TOP BUTTON -->
@@ -53,20 +47,80 @@ AppAsset::register($this);
     } ?>
     
     <?= footerWidget::widget(); ?>
-    <?= loginModalWidget::widget(); ?>
-
+    <?= cartModalWidget::widget(); ?>
+    
 <?php $this->endBody() ?>
 
+
 <script>
-  function addWishlist(id){
-    $.get('<?php Yii::$app->homeUrl.'wishlist/add' ?>')
-  }
+  
+  //Wishlist
+  $('.likeproduct').click(function(event) {
+    event.preventDefault();
+    var link = '<?php echo Yii::$app->homeUrl.'wishlist/add'?>';
+    var id = $(this).data('id');
+    var qty = $('input#qty').val();
+    $.ajax({
+      url: link,
+      type: 'GET',
+      data: {product_id: id,qty:qty},
+      success:function(res){
+        alert('Bạn đã thêm sản phẩm vào yêu thích');
+      }
+    });
+  });
 
-  function addCart(id){
-    alert('hehe');
-  }
+
+  $('.btn-add-cart').click(function(event) {
+    event.preventDefault();
+    var link = '<?php echo Yii::$app->homeUrl.'cart/add-cart'?>';
+    var qty = $('input#qty').val();
+    var id = $(this).data('id');
+    var name = $(this).data('name');
+    var size = $('[name="size"]:radio:checked').val();
+    var color = $('[name="color"]:radio:checked').val();
+    $.ajax({
+      url: link,
+      type: 'GET',
+      data: {product_id: id, qty:qty, size:size, color:color },
+      success:function(res){
+        $('#alert-pro-name').html('Sản phẩm đã thêm vào giỏ hàng');
+      }
+    });
+  });
+
+  
+  $('.aa-remove-product').click(function(event) {
+    event.preventDefault();
+    var link = '<?php echo Yii::$app->homeUrl.'cart/remove'?>';
+    var id = $(this).data('id');
+    $.ajax({
+      url: link,
+      type: 'GET',
+      data: {product_id: id},
+      success:function(res){
+        alert('Bạn đã loại sản phẩm khỏi giỏ hàng');
+        $("#listcart").load(location.href+' #listcart>*',"");
+        $('#aa-cartbox-summary').load(location.href+' #aa-cartbox-summary>*',"");
+      }
+    });
+  });
+
+   function delCart(id){
+     $.get('<?php echo Yii::$app->homeUrl.'cart/remove'?>',{product_id:id}, function(data){
+       // alert("Bạn muốn xóa sản phẩm này?");
+      val = data.split("-");
+      $("#listcart").load(location.href+' #listcart>*',"");
+      $('#aa-cartbox-summary').load(location.href+' #aa-cartbox-summary>*',"");
+      
+    });
+    }
+
+  </script>
+
+  <script type='text/javascript'>window._sbzq||function(e){e._sbzq=[];var t=e._sbzq;t.push(["_setAccount",42684]);var n=e.location.protocol=="https:"?"https:":"http:";var r=document.createElement("script");r.type="text/javascript";r.async=true;r.src=n+"//static.subiz.com/public/js/loader.js";var i=document.getElementsByTagName("script")[0];i.parentNode.insertBefore(r,i)}(window);
+  </script>
 </script>
-
 
 </body>
 </html>

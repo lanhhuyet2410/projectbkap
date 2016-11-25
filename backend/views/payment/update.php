@@ -5,9 +5,9 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model backend\models\Payment */
 
-$this->title = 'Cập nhật phương thức thanh toán: ' . $model->payment_id;
+$this->title = 'Cập nhật phương thức thanh toán: ' . $model->payment_name;
 $this->params['breadcrumbs'][] = ['label' => 'Payments', 'url' => ['index']];
-$this->params['breadcrumbs'][] = ['label' => $model->payment_id, 'url' => ['view', 'id' => $model->payment_id]];
+$this->params['breadcrumbs'][] = ['label' => $model->payment_name, 'url' => ['view', 'id' => $model->payment_id]];
 $this->params['breadcrumbs'][] = 'Update';
 ?>
 <div class="payment-update">

@@ -4,45 +4,28 @@ namespace frontend\models;
 
 use Yii;
 
-/**
- * This is the model class for table "wishlist".
- *
- * @property integer $wishlist_id
- * @property integer $user_id
- * @property integer $product_id
- * @property integer $created_at
- */
-class Wishlist extends \yii\db\ActiveRecord
+class Wishlist
 {
-    /**
-     * @inheritdoc
-     */
-    public static function tableName()
-    {
-        return 'wishlist';
+    
+    public $wishlist;
+    public function __construct(){
+        $this->wishlist = Yii::$app->session['wishlist'];
     }
 
-    /**
-     * @inheritdoc
-     */
-    public function rules()
+    public function add($data)
     {
-        return [
-            [['user_id', 'product_id', 'created_at'], 'required'],
-            [['user_id', 'product_id', 'created_at'], 'integer'],
-        ];
+        $this->wishlist[$data->product_id] = $data;
+        
+        Yii::$app->session['wishlist']= $this->wishlist;
+        
     }
-
-    /**
-     * @inheritdoc
-     */
-    public function attributeLabels()
-    {
-        return [
-            'wishlist_id' => 'Wishlist ID',
-            'user_id' => 'User ID',
-            'product_id' => 'Product ID',
-            'created_at' => 'Created At',
-        ];
+    public function remove($data){
+        unset($this->wishlist[$data->product_id]);
+        Yii::$app->session['wishlist']= $this->wishlist;
+    }
+    
+    public function removeall(){
+        $this->wishlist=[];
+        Yii::$app->session['wishlist']= $this->wishlist;
     }
 }

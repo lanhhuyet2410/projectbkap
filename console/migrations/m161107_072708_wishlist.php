@@ -15,6 +15,7 @@ class m161107_072708_wishlist extends Migration
             'wishlist_id' => $this->primaryKey(),
             'user_id' => $this->integer()->notNull(),
             'product_id' => $this->integer()->notNull(),
+            'status' => $this->smallInteger()->notNull()->defaultValue(1),
             'created_at' => $this->integer()->notNull(),
         ], $tableOptions);
     }

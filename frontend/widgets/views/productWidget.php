@@ -52,7 +52,7 @@
                       <li>
                         <figure>
                           <a class="aa-product-img" href="<?= Yii::$app->homeUrl.'product/detail?id='.$valuepro['product_id'] ?>"><img src="<?= $valuepro['product_image'] ?>" alt="<?= $valuepro['product_name'] ?>"></a>
-                          <a class="aa-add-card-btn" href="javascript:void(0)" onclick="addCart(<?= $valuepro["product_id"]?>)"><span class="fa fa-shopping-cart"></span>Mua hàng</a>
+                          <a href="javascript:void(0)" class="aa-add-card-btn btn-add-cart" data-id="<?= $valuepro['product_id'] ?>"><span class="fa fa-shopping-cart"></span>Mua hàng</a>
                             <figcaption>
                             <h4 class="aa-product-title">
                               <?php echo Html::a($valuepro['product_name'],['/product/detail','id'=> $valuepro['product_id']]) ?>
@@ -61,9 +61,9 @@
                           </figcaption>
                         </figure>                        
                         <div class="aa-product-hvr-content">
-                          <a href="#" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="fa fa-heart-o"></span></a>
+                          <a href="javascript:void(0)" class="likeproduct" data-id="<?= $valuepro['product_id'] ?>" data-toggle="tooltip" data-placement="top" title="Thích sản phẩm"><span class="fa fa-heart-o"></span></a>
                           <a href="#" data-toggle="tooltip" data-placement="top" title="Compare"><span class="fa fa-exchange"></span></a>
-                          <a href="#" data-toggle2="tooltip" class="quick-view" data-id="<?= $valuepro['product_id'] ?>" data-placement="top" title="Quick View" data-toggle="modal" data-target="#quick-view-modal"><span class="fa fa-search"></span></a>                          
+                          <a href="#" data-toggle2="tooltip" class="quick-view" data-id="<?= $valuepro['product_id'] ?>" data-placement="top" title="Xem nhanh" data-toggle="modal" data-target="#quick-view-modal"><span class="fa fa-search"></span></a>                          
                         </div>
                         <!-- product badge -->
                         <?php 

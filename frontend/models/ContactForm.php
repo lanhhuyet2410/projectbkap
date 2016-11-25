@@ -13,18 +13,23 @@ class ContactForm extends Model
     public $name;
     public $email;
     public $subject;
-    public $body;
+    public $company;
+    public $message;
     public $verifyCode;
 
 
     /**
      * @inheritdoc
      */
+    public static function tableName()
+    {
+        return 'contact';
+    }
     public function rules()
     {
         return [
             // name, email, subject and body are required
-            [['name', 'email', 'subject', 'body'], 'required'],
+            [['name', 'email', 'subject', 'company' , 'message'], 'required','message'=>'{attribute} không được để trống'],
             // email has to be a valid email address
             ['email', 'email'],
             // verifyCode needs to be entered correctly
@@ -54,7 +59,8 @@ class ContactForm extends Model
             ->setTo($email)
             ->setFrom([$this->email => $this->name])
             ->setSubject($this->subject)
-            ->setTextBody($this->body)
+            ->setTextBody($this->company)
+            ->setTextBody($this->message)
             ->send();
     }
 

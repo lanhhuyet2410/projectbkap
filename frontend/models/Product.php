@@ -30,6 +30,7 @@ class Product extends \yii\db\ActiveRecord
     /**
      * @inheritdoc
      */
+    public $qtt;
     public static function tableName()
     {
         return 'product';

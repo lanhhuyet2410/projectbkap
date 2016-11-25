@@ -5,9 +5,9 @@ use yii\helpers\Html;
 /* @var $this yii\web\View */
 /* @var $model backend\models\Size */
 
-$this->title = 'Cập nhật kích cỡ: ' . $model->size_id;
+$this->title = 'Cập nhật kích cỡ: ' . $model->size_name;
 $this->params['breadcrumbs'][] = ['label' => 'Sizes', 'url' => ['index']];
-$this->params['breadcrumbs'][] = ['label' => $model->size_id, 'url' => ['view', 'id' => $model->size_id]];
+$this->params['breadcrumbs'][] = ['label' => $model->size_name, 'url' => ['view', 'id' => $model->size_id]];
 $this->params['breadcrumbs'][] = 'Update';
 ?>
 <div class="size-update">
