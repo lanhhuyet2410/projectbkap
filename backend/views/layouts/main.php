@@ -25,7 +25,7 @@ AppAsset::register($this);
 <body>
 <?php $this->beginBody() ?>
 
-    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+    <nav class="navbar navbar-inverse navbar-static-top" role="navigation">
         <div class="container-fluid">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#sidebar-collapse">
@@ -37,7 +37,7 @@ AppAsset::register($this);
                 <a class="navbar-brand" href="<?= Yii::$app->urlManager->baseUrl ?>"><span>hoanganh</span>daily shop</a>
                 <ul class="user-menu">
                     <li class="dropdown pull-right">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><svg class="glyph stroked male-user"><use xlink:href="#stroked-male-user"></use></svg><?php echo Yii::$app->user->identity->username; ?><span class="caret"></span></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Xin chào <svg class="glyph stroked male-user"><use xlink:href="#stroked-male-user"></use></svg><?php echo Yii::$app->user->identity->username; ?><span class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu">
                             <li><a href="<?= Yii::$app->homeUrl.'user/view?id='.Yii::$app->user->identity->id; ?>"><svg class="glyph stroked male-user"><use xlink:href="#stroked-male-user"></use></svg> Thông tin tài khoản</a></li>
                             <li>

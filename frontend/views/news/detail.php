@@ -98,7 +98,7 @@
                         <a class="aa-cartbox-img" href="<?= Yii::$app->homeUrl.'news/detail?id='.$value['news_id'] ?>"><img src="<?= $value['image_link'] ?>" alt="<?= $value['title'] ?>"></a>
                         <div class="aa-cartbox-info">
                           <h4><a href="<?= Yii::$app->homeUrl.'news/detail?id='.$value['news_id'] ?>"><?= $value['title'] ?></a></h4>
-                          <p><?= $value['created_at'] ?></p>
+                          <p><?php echo date('d-m-Y',$value['updated_at']);?></p>
                         </div>                    
                       </li>
                     <?php } ?>                             

@@ -23,7 +23,7 @@
                 <div class="aa-blog-info">
                   <h3 class="aa-blog-title"><a href="<?= Yii::$app->homeUrl.'news/detail?id='.$value['news_id']?>"><?= $value['title'] ?></a></h3>
                   <p><?= $value['description'] ?></p> 
-                  <a href="#" class="aa-read-mor-btn">Read more <span class="fa fa-long-arrow-right"></span></a>
+                  <a href="<?= Yii::$app->homeUrl.'news/detail?id='.$value['news_id']?>" class="aa-read-mor-btn">Read more <span class="fa fa-long-arrow-right"></span></a>
                 </div>
               </div>
             </div>

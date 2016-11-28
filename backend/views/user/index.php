@@ -69,9 +69,9 @@ $this->params['breadcrumbs'][] = $this->title;
                 ],
                 'content'=>function($model){
                     if ($model->status==10) {
-                        return Html::a('Đã kích hoạt','javascrip:void(0)',['class'=>'label label-success']);
+                        return Html::a('Đã kích hoạt','javascript:void(0)',['class'=>'label label-success']);
                     }else{
-                        return Html::a('Không kích hoạt','javascrip:void(0)',['class'=>'label label-danger']);
+                        return Html::a('Không kích hoạt','javascript:void(0)',['class'=>'label label-danger']);
                     }
                 },
                 'contentOptions'=>[

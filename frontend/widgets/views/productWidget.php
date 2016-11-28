@@ -49,7 +49,7 @@
                         foreach ($product as $valuepro) {
                           
                        ?>
-                      <li>
+                      <li class="col-sm-3">
                         <figure>
                           <a class="aa-product-img" href="<?= Yii::$app->homeUrl.'product/detail?id='.$valuepro['product_id'] ?>"><img src="<?= $valuepro['product_image'] ?>" alt="<?= $valuepro['product_name'] ?>"></a>
                           <a href="javascript:void(0)" class="aa-add-card-btn btn-add-cart" data-id="<?= $valuepro['product_id'] ?>"><span class="fa fa-shopping-cart"></span>Mua hàng</a>

@@ -4,30 +4,30 @@
 
 $this->title = 'Quản trị hệ thống';
 ?>
-<div class="container">
+<div class="container-fluid">
     <div class = "row disable_side">
         <div class = "col-xs-12 col-sm-6 col-md-3 col-lg-3 new_nth">
             <div class = "hot_new">
                 <h5>Quản trị viên</h5>
-                <h6></h6>
+                <h6><?= count($user) ?></h6>
             </div>
         </div>
         <div class = "col-xs-12 col-sm-6 col-md-3 col-lg-3 new_nth">
             <div class = "hot_new">
                 <h5>Số bài viết</h5>
-                <h6></h6>
+                <h6><?= count($news) ?></h6>
             </div>
         </div>
         <div class = "col-xs-12 col-sm-6 col-md-3 col-lg-3 new_nth">
             <div class = "hot_new">
                 <h5>Số sản phẩm</h5>
-                <h6></h6>
+                <h6><?= count($product) ?></h6>
             </div>
         </div>
         <div class = "col-xs-12 col-sm-6 col-md-3 col-lg-3 new_nth">
             <div class = "hot_new">
                 <h5>Số thành viên</h5>
-                <h6></h6>
+                <h6><?= count($customer) ?></h6>
             </div>
         </div>
     </div>
@@ -74,7 +74,7 @@ $this->title = 'Quản trị hệ thống';
             <ul class="list-group heightAdmin">
                 <?php foreach($user as $value) : ?>
                 <li class="list-group-item">
-                    <?php echo $value->username; ?>
+                    <a href="<?= Yii::$app->homeUrl.'user/view?id='.$value->id?>"><?php echo $value->username; ?></a>
                 </li>
                 <?php endforeach; ?>
             </ul>
@@ -88,7 +88,8 @@ $this->title = 'Quản trị hệ thống';
                 <?php foreach($news as $value) : ?>
                 <li class="list-group-item">
                     <span class="badge"><?php echo date('d-m-Y h:i:s',$value->created_at); ?></span>
-                    <?php echo $value->title; ?>
+                    
+                    <a href="<?= Yii::$app->homeUrl.'news/view?id='.$value->news_id?>"><?php echo $value->title; ?></a>
                 </li>
                 <?php endforeach; ?>
             </ul>
@@ -102,7 +103,7 @@ $this->title = 'Quản trị hệ thống';
                <?php foreach($product as $value) : ?>
                <li class="list-group-item">
                     <span class="badge"><?php echo date('d-m-Y h:i:s',$value->created_at); ?></span>
-                    <?php echo $value->product_name; ?>
+                    <a href="<?= Yii::$app->homeUrl.'product/view?id='.$value->product_id?>"><?php echo $value->product_name; ?></a>
                 </li>
                 <?php endforeach; ?>
             </ul>

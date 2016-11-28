@@ -19,7 +19,7 @@
               foreach ($data1 as $key1 => $value1) {
                
             ?>
-            <li>
+            <li class="col-xs-12 col-sm-3 col-md-3 col-lg-3">
               <figure>
                 <a class="aa-product-img" href="<?= Yii::$app->homeUrl.'product/detail?id='.$value1['product_id'] ?>"><img src="<?= $value1['product_image'] ?>" alt="<?= $value1['product_name'] ?>"></a>
                 <a href="javascript:void(0)" class="aa-add-card-btn btn-add-cart" data-id="<?= $value1['product_id'] ?>"><span class="fa fa-shopping-cart"></span>Add To Cart</a>

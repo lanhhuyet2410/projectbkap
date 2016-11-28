@@ -33,6 +33,7 @@ $('.quick-view').click(function(event) {
 				$('a.aa-add-to-cart-btn').attr('href','/projectbkap/product/detail?id='+val.product_id);
 				$('#hehe').attr('href','javascript:void(0)');
 				$('#hehe').attr('data-id',val.product_id);
+				$('#qty').val(1);
 			});
 			// console.log(items);	
 		}

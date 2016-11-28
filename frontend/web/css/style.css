@@ -1182,7 +1182,7 @@ img {
   height: 380px;
   text-align: center;
   margin: 0 52px 20px 0px ;
-  width: 20.5%;
+  /*width: 20.5%;*/
   position: relative;
   overflow: hidden;
 }

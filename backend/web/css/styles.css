@@ -8,7 +8,7 @@ Version 1.0
 
 body {
 	background: #f1f4f7;
-	padding-top: 50px;
+	/*padding-top: 50px;*/
 	color: #5f6468;
 }
 
@@ -973,3 +973,11 @@ h1.page-header {
 }
 
 
+@media screen and (max-width:1030px){
+	.disable_side {
+		margin:20}
+		
+	.padding_side{
+		padding-left:15px;
+		padding-right:15px;}
+}
