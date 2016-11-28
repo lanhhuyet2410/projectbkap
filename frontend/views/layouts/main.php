@@ -76,16 +76,21 @@ AppAsset::register($this);
     var link = '<?php echo Yii::$app->homeUrl.'cart/add-cart'?>';
     var qty = $('input#qty').val();
     var id = $(this).attr("data-id");
-    console.log(link);
     var name = $(this).data('name');
     var size = $('[name="size"]:radio:checked').val();
     var color = $('[name="color"]:radio:checked').val();
+    if ((size == null || typeof size =='undefined' || size == '') || (color == null || typeof color =='undefined' || color == '')) {
+       alert('Bạn phải chọn size và màu sắc');
+       return;
+    }
+    // console.log(size);
     $.ajax({
       url: link,
       type: 'GET',
       data: {product_id: id, qty:qty, size:size, color:color },
       success:function(res){
-        $('#alert-pro-name').html('Sản phẩm đã thêm vào giỏ hàng');
+        // $('#alert-pro-name').html('Sản phẩm đã thêm vào giỏ hàng');
+        alert('Bạn đã thêm vào giỏ hàng');
       }
     });
   });

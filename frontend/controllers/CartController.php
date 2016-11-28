@@ -53,6 +53,17 @@ class CartController extends Controller
 		}
 		return $this->redirect(['/cart']);
 	}
+	public function actionUpdateCartAll()
+	{
+		$cart=new Cart();
+		if (Yii::$app->request->post()) {
+			$product_id=$_POST["product_id"];
+		$qtt=$_POST["qtt"];
+		$cart->update($product_id,$qtt);
+		
+		}
+		return $this->redirect(['/cart']);
+	}
 	public function actionClear(){
 		$cart=new Cart();
 		$cart->removeall();

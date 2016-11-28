@@ -18,7 +18,8 @@ $('.quick-view').click(function(event) {
 					var colorhtml = '';
 					for(var i = 0; i < val.color.length; i++){
 
-						colorhtml += '<input type="radio" name="color" id="'+val.color[i]+'">'+val.color[i]+'<br/>';
+						colorhtml += '<input type="radio" name="color" id="color_'+val.color[i]+'"><label for="color_'+val.color[i]+'">&nbsp;'+val.color[i]+'</label>&nbsp;&nbsp;&nbsp;';
+
 					}
 				}
 				$('div.quick-view-color').html(colorhtml);
@@ -26,7 +27,7 @@ $('.quick-view').click(function(event) {
 				if (val.size.length) {
 					var sizehtml = '';
 					for (var i = 0; i < val.size.length; i++) {
-						sizehtml += '<input type="radio" name="size" id="'+val.size[i]+'">'+val.size[i]+'<br/>';
+						sizehtml += '<input type="radio" name="size" id="size_'+val.size[i]+'"><label for="size_'+val.size[i]+'">&nbsp;'+val.size[i]+'</label>&nbsp;&nbsp;&nbsp;';
 					}
 				}
 				$('div.quick-view-size').html(sizehtml);

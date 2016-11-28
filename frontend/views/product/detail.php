@@ -49,8 +49,8 @@ $this->title = 'Product Detail';
                     ?>
                       <div class="aa-prod-view-size">
                         <?php foreach ($sizes  as $size) :  ?>
-                          <input type="radio" name="size" value="<?= $data->getSize($size)->size_id ;?>" id="<?= $data->getSize($size)->size_id ?>">
-                          <label for="<?= $data->getSize($size)->size_id ?>"><?php echo $data->getSize($size)->size_name; ?></label>
+                          <input type="radio" name="size" value="<?= $data->getSize($size)->size_id ;?>" id="size_<?= $data->getSize($size)->size_id ?>">
+                          <label for="size_<?= $data->getSize($size)->size_id ?>"><?php echo $data->getSize($size)->size_name; ?></label>
                         <?php endforeach; ?>
                       </div>
                     <?php endif; ?>
@@ -62,8 +62,8 @@ $this->title = 'Product Detail';
                     ?>
                       <div class="aa-color-tag">
                         <?php foreach ($colors  as $color) :  ?>
-                          <input type="radio" name="color" value="<?= $data->getColor($color)->color_id ;?>" id="<?= $data->getColor($color)->color_id ;?>" />
-                          <label for="<?= $data->getColor($color)->color_id ;?>"><?php echo $data->getColor($color)->color_name; ?>
+                          <input type="radio" name="color" value="<?= $data->getColor($color)->color_id ;?>" id="color_<?= $data->getColor($color)->color_id ;?>" />
+                          <label for="color_<?= $data->getColor($color)->color_id ;?>"><?php echo $data->getColor($color)->color_name; ?>
                           </label><br/>
                         <?php endforeach; ?>                     
                       </div>
